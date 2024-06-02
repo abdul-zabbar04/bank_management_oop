@@ -1,3 +1,4 @@
+
 class Bank:
     def __init__(self, name) -> None:
         self.name= name
@@ -46,9 +47,13 @@ class Bank:
             print('User not found!')
 
     def get_users(self):
-        print('All users: ')
+        print()
+        print('Total users: ',len(self.__users))
+        print('Users details: ')
+        i=1
         for id, user in self.__users.items():
-            print(f'AC_no: {id}, User Name: {user.name}')
+            print(f'{i}. Account_no: {id}, User Name: {user.name}, Email: {user.email}, Address: {user.address}, AC type: {user.account_type};')
+            i+=1
 
     def getter_balance(self):
         return self.__balance
